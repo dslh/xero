@@ -2,7 +2,7 @@ module Xero
   class Configuration
 
     attr_accessor :logger, :consumer_key, :consumer_secret, :private_key_path,
-      :invoice_due_days
+      :invoice_due_days, :ca_file
 
     def initialize(options = {})
       default_options = { invoice_due_days: 30 }.merge(options)

@@ -8,7 +8,8 @@ module Xero
         site: 'https://api.xero.com',
         request_token_path: '/oauth/RequestToken',
         access_token_path: '/oauth/AccessToken',
-        authorize_path: '/oauth/Authorize'
+        authorize_path: '/oauth/Authorize',
+        ca_file: Xero.configuration.ca_file
       }.reverse_merge(options)
     end
 
