@@ -1,11 +1,13 @@
 module Xero
   class Connection
 
+    API_PATH = '/api.xro/2.0'.freeze
+
     attr_accessor :client, :consumer_options
 
     def initialize(options = {})
       self.consumer_options = {
-        site: 'https://api.xero.com',
+        site: Xero.configuration.api_host,
         request_token_path: '/oauth/RequestToken',
         access_token_path: '/oauth/AccessToken',
         authorize_path: '/oauth/Authorize',
@@ -43,7 +45,7 @@ module Xero
     private
 
     def make_request(method, path, params = {})
-      uri = "#{Xero.configuration.xero_url}/#{path}"
+      uri = "#{Xero.configuration.api_host}#{API_PATH}/#{path}"
 
       headers = { 'charset' => 'utf-8' }
 
