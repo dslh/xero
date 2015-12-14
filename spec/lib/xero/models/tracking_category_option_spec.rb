@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Xero::Models::TrackingCategoryOption do
+describe Xero::Models::TrackingCategoryOption, type: :model do
 end

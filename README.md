@@ -1,5 +1,4 @@
-[![Build
-Status](https://travis-ci.org/mattbeedle/xero.svg?branch=master)](https://travis-ci.org/mattbeedle/xero)
+[![Circle CI](https://circleci.com/gh/gohiring/xero.svg?style=svg&circle-token=ec8f29a58a76aed94881f13e756888ec9aafc762)](https://circleci.com/gh/gohiring/xero)
 
 # Xero
 
