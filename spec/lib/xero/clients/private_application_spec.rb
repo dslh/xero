@@ -12,15 +12,15 @@ describe Xero::Clients::PrivateApplication do
     end
 
     it 'should return an array' do
-      contacts.should be_a(Array)
+      expect(contacts).to be_a(Array)
     end
 
     it 'should contain contacts' do
-      contacts.first.should be_a(Xero::Models::Contact)
+      expect(contacts.first).to be_a(Xero::Models::Contact)
     end
 
     it 'should populate the contacts id' do
-      contacts.first.id.should_not be_blank
+      expect(contacts.first.id).not_to be_blank
     end
   end
 
@@ -38,15 +38,15 @@ describe Xero::Clients::PrivateApplication do
     end
 
     it 'should return a contact' do
-      contact.should be_a(Xero::Models::Contact)
+      expect(contact).to be_a(Xero::Models::Contact)
     end
 
     it 'should populate the contact id' do
-      contact.id.should_not be_blank
+      expect(contact.id).not_to be_blank
     end
 
     it 'should populate the contact addresses' do
-      contact.addresses.first.should be_a(Xero::Models::Address)
+      expect(contact.addresses.first).to be_a(Xero::Models::Address)
     end
   end
 
@@ -60,51 +60,51 @@ describe Xero::Clients::PrivateApplication do
     end
 
     it 'should return an invoice' do
-      invoice.should be_a(Xero::Models::Invoice)
+      expect(invoice).to be_a(Xero::Models::Invoice)
     end
 
     it 'should populate the type' do
-      invoice.type.should_not be_blank
+      expect(invoice.type).not_to be_blank
     end
 
     it 'should populate the date' do
-      invoice.date.should_not be_blank
+      expect(invoice.date).not_to be_blank
     end
 
     it 'should populate the due date' do
-      invoice.due_date.should_not be_blank
+      expect(invoice.due_date).not_to be_blank
     end
 
     it 'should populate the invoice number' do
-      invoice.invoice_number.should_not be_blank
+      expect(invoice.invoice_number).not_to be_blank
     end
 
     it 'should populate the total' do
-      invoice.total.should_not be_blank
+      expect(invoice.total).not_to be_blank
     end
 
     it 'should populate the currency code' do
-      invoice.currency_code.should_not be_blank
+      expect(invoice.currency_code).not_to be_blank
     end
 
     it 'should populate the id' do
-      invoice.id.should_not be_blank
+      expect(invoice.id).not_to be_blank
     end
 
     it 'should populate the total tax' do
-      invoice.total_tax.should_not be_blank
+      expect(invoice.total_tax).not_to be_blank
     end
 
     it 'should populate the invoice status' do
-      invoice.status.should eql('AUTHORISED')
+      expect(invoice.status).to eql('AUTHORISED')
     end
 
     it 'should populate the invoice contact' do
-      invoice.contact.should be_a(Xero::Models::Contact)
+      expect(invoice.contact).to be_a(Xero::Models::Contact)
     end
 
     it 'should populate the contact data' do
-      invoice.contact.id.should_not be_blank
+      expect(invoice.contact.id).not_to be_blank
     end
   end
 
@@ -116,15 +116,15 @@ describe Xero::Clients::PrivateApplication do
     end
 
     it 'should return an array' do
-      invoices.should be_a(Array)
+      expect(invoices).to be_a(Array)
     end
 
     it 'should contain invoices' do
-      invoices.first.should be_a(Xero::Models::Invoice)
+      expect(invoices.first).to be_a(Xero::Models::Invoice)
     end
 
     it 'should populate the invoice data' do
-      invoices.first.id.should_not be_blank
+      expect(invoices.first.id).not_to be_blank
     end
   end
 
@@ -152,11 +152,11 @@ describe Xero::Clients::PrivateApplication do
       end
 
       it 'should populate the item id' do
-        item.id.should_not be_blank
+        expect(item.id).not_to be_blank
       end
 
       it 'should be persisted' do
-        item.should be_persisted
+        expect(item).to be_persisted
       end
     end
 
@@ -201,11 +201,11 @@ describe Xero::Clients::PrivateApplication do
       end
 
       it 'should persist the invoice' do
-        invoice.should be_persisted
+        expect(invoice).to be_persisted
       end
 
       it 'should populate the contact id' do
-        invoice.contact.id.should_not be_blank
+        expect(invoice.contact.id).not_to be_blank
       end
     end
   end
@@ -234,7 +234,7 @@ describe Xero::Clients::PrivateApplication do
 
     it 'should return an item' do
       VCR.use_cassette('get_item') do
-        item.should be_a(Xero::Models::Item)
+        expect(item).to be_a(Xero::Models::Item)
       end
     end
   end
@@ -247,35 +247,35 @@ describe Xero::Clients::PrivateApplication do
     end
 
     it 'should return an array' do
-      items.should be_a(Array)
+      expect(items).to be_a(Array)
     end
 
     it 'should contain items' do
-      items.first.should be_a(Xero::Models::Item)
+      expect(items.first).to be_a(Xero::Models::Item)
     end
 
     it 'should populate the id' do
-      items.first.id.should_not be_blank
+      expect(items.first.id).not_to be_blank
     end
 
     it 'should populate the item code' do
-      items.first.code.should_not be_blank
+      expect(items.first.code).not_to be_blank
     end
 
     it 'should populate the item description' do
-      items.first.description.should_not be_blank
+      expect(items.first.description).not_to be_blank
     end
 
     it 'should populate the item purchase detail' do
-      items.first.purchase_details.should be_a(Xero::Models::ItemDetail)
+      expect(items.first.purchase_details).to be_a(Xero::Models::ItemDetail)
     end
 
     it 'should populate the item sales detail' do
-      items.first.sales_details.should be_a(Xero::Models::ItemDetail)
+      expect(items.first.sales_details).to be_a(Xero::Models::ItemDetail)
     end
 
     it 'should populate the item purchase detail account code' do
-      items.first.purchase_details.account_code.should_not be_blank
+      expect(items.first.purchase_details.account_code).not_to be_blank
     end
   end
 end

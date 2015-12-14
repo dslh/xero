@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Xero::Models::Account do
+describe Xero::Models::Account, type: :model do
 
   # describe '.from_xml' do
   #   let(:account) do

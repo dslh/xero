@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe Xero::Models::Item do
+describe Xero::Models::Item, type: :model do
 
   describe 'validations' do
-    it { should validate_presence_of(:code) }
+    it { is_expected.to validate_presence_of(:code) }
   end
 
   describe 'to_xero_xml' do
@@ -28,31 +28,31 @@ describe Xero::Models::Item do
     subject { item.to_xero_xml }
 
     it 'should include the purchase detail' do
-      subject.should match(/PurchaseDetails/)
+      expect(subject).to match(/PurchaseDetails/)
     end
 
     it 'should include the sales detail' do
-      subject.should match(/SalesDetails/)
+      expect(subject).to match(/SalesDetails/)
     end
 
     it 'should include the code' do
-      subject.should match(/Code/)
+      expect(subject).to match(/Code/)
     end
 
     it 'should include the code value' do
-      subject.should match(/Monster/)
+      expect(subject).to match(/Monster/)
     end
 
     it 'should include the unit price' do
-      subject.should match(/UnitPrice/)
+      expect(subject).to match(/UnitPrice/)
     end
 
     it 'should include the description' do
-      subject.should match(/Description/)
+      expect(subject).to match(/Description/)
     end
 
     it 'should include the description value' do
-      subject.should match(/Test description/)
+      expect(subject).to match(/Test description/)
     end
   end
 
@@ -67,19 +67,19 @@ describe Xero::Models::Item do
     end
 
     it 'should add a new item detail to the item' do
-      item.purchase_details.should be_a(Xero::Models::ItemDetail)
+      expect(item.purchase_details).to be_a(Xero::Models::ItemDetail)
     end
 
     it 'should set the unit price' do
-      item.purchase_details.unit_price.should eql(100.0)
+      expect(item.purchase_details.unit_price).to eql(100.0)
     end
 
     it 'should set the account code' do
-      item.purchase_details.account_code.should eql('620')
+      expect(item.purchase_details.account_code).to eql('620')
     end
 
     it 'should set the tax type' do
-      item.purchase_details.tax_type.should eql('NONE')
+      expect(item.purchase_details.tax_type).to eql('NONE')
     end
   end
 
@@ -93,19 +93,19 @@ describe Xero::Models::Item do
     end
 
     it 'should add a new item detail to the item' do
-      item.sales_details.should be_a(Xero::Models::ItemDetail)
+      expect(item.sales_details).to be_a(Xero::Models::ItemDetail)
     end
 
     it 'should set the unit price' do
-      item.sales_details.unit_price.should eql(550.0)
+      expect(item.sales_details.unit_price).to eql(550.0)
     end
 
     it 'should set the account code' do
-      item.sales_details.account_code.should eql('200')
+      expect(item.sales_details.account_code).to eql('200')
     end
 
     it 'should set the tax type' do
-      item.sales_details.tax_type.should eql('NONE')
+      expect(item.sales_details.tax_type).to eql('NONE')
     end
   end
 end
