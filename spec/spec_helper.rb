@@ -6,6 +6,7 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'bundler/setup'
+require 'active_support/deprecation'
 require 'active_attr/rspec'
 require 'faker'
 require 'xero'
